@@ -53,7 +53,5 @@
         <ul>Crear alias para ejecutar tests
             <li>alias test=vendor/bin/phpunit</li>
         </ul>
- 
     </div>
-
 </div>
