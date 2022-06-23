@@ -1,0 +1,1 @@
+{"version":1,"defects":{"AccessHandlerTest::test_grant_access":3,"AccessHandlerTest::test_deny_access":3},"times":{"AccessHandler::test_grant_access":0.006,"AccessHandlerTest::test_grant_access":0.004,"AccessHandlerTest::test_deny_access":0}}
