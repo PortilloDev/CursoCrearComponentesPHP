@@ -33,6 +33,16 @@
            En la programación orientada a objetos las interfaces nos permiten crear objetos aún más flexibles, dado que si un controlador necesita un repositorio, podemos solicitar una interface en vez de una implementación en concreta
         </p>
     </div>
+    <div>
+        <h4>Mockery</h4>
+        <p>
+           Mockery es un marco de objeto simulado PHP simple pero flexible para usar en pruebas unitarias con PHPUnit, PHPSpec o cualquier otro marco de prueba. Su objetivo principal es ofrecer un marco doble de prueba con una API sucinta capaz de definir claramente todas las posibles operaciones e interacciones de objetos utilizando un lenguaje específico de dominio (DSL) legible por humanos. Diseñado como una alternativa a la biblioteca phpunit-mock-objects de PHPUnit, Mockery es fácil de integrar con PHPUnit y puede operar junto con phpunit-mock-objects sin que el mundo termine.
+        </p>
+        <p>
+            Componente de instalacion:
+           <code> composer require mockery/mockery --dev  </code>
+        </p>
+    </div>
      <div>
         <h4>Stub </h4>
         <p>
