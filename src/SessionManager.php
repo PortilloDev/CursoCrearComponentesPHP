@@ -29,6 +29,7 @@ class SessionManager
     public  function load()
     {
         $this->data = $this->driver->load();
+       
     }
 
 

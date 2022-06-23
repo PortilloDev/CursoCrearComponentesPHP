@@ -1,6 +1,8 @@
 <?php 
 
-function view($template, array $vars) 
+use App\Container;
+
+function view($template, array $vars = array()) 
 {
     extract($vars);
 
@@ -14,4 +16,15 @@ function view($template, array $vars)
 
     require($path . 'layout.php');
 
+}
+
+function abort404()
+{
+    $access = Container::getInstance()->access();
+
+    http_response_code(404);
+
+    view('page404', compact('access'));
+    
+    exit();
 }

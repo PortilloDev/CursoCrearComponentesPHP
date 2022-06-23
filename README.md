@@ -15,6 +15,15 @@
 
 <div>
     <h3> WIKI del proyecto </h3>
+     <div>
+        <h4>Contenedor de inyección de dependencias</h4>
+        <p>
+            Para reducir la cantidad de código que necesitamos cuando implementamos el patrón de inyección de dependencias, debemos crear otro objeto llamado contenedor de inyección de dependencias, el cuál será un objeto que conocerá cómo instanciar y «ensamblar» otros objetos.
+        </p>
+        <p>
+           Los contenedores de inyección de dependencias se crean como objetos que conocen cómo instanciar y configurar otros objetos, simplificando y desacoplando el código, ayudando a pasar de estructuras más complejas a un objeto que encapsula cómo funciona los constructores de cada uno de los otros objetos y sus dependencias, permitiendo de esta manera trabajar con ellos sin mayor problema.
+        </p>
+    </div>
     <div>
         <h4>Clases o métodos staticos</h4>
         <p>
@@ -41,6 +50,28 @@
         <p>
             Componente de instalacion:
            <code> composer require mockery/mockery --dev  </code>
+        </p>
+    </div>
+    <div>
+        <h4>whoops</h4>
+        <p>
+           whoops es un marco de manejo de errores para PHP
+        </p>
+        <p>
+            <ul dir="auto">
+                <li>Manejo de errores flexible y basado en pilas</li>
+                <li>Biblioteca independiente sin (actualmente) dependencias requeridas</li>
+                <li>API simple para manejar excepciones, marcos de rastreo y sus datos</li>
+                <li>Incluye una página de error bastante radical para sus proyectos de aplicaciones web</li>
+                <li>Incluye la capacidad de abrir archivos referenciados directamente en su editor e IDE</li>
+                <li>Incluye controladores para diferentes formatos de respuesta (JSON, XML, SOAP)</li>
+                <li>Fácil de ampliar e integrar con bibliotecas existentes</li>
+                <li>Base de código limpia, bien estructurada y probada</li>
+            </ul>
+        </p>
+        <p>
+            Componente de instalacion:
+           <code> composer require filp/whoops  </code>
         </p>
     </div>
      <div>
