@@ -1,27 +1,22 @@
 <?php 
 
+use App\User;
 use App\AccessHandler;
-use App\Authenticator;
-use App\SessionManager;
-use App\SessionFileDriver;
-use App\SessionArrayDriver;
-use App\Stubs\AuthenticatorStub;
+use App\Interfaces\AuthenticatorInterface;
 
 class AccessHandlerTest extends \PHPUnit\Framework\TestCase
 {
-    public function test_grant_access()
+    public function tearDown() :void
     {
-        // $driver = new SessionArrayDriver([
-        //     'user_data' => [
-        //         'name' => 'Ivan',
-        //         'role' => 'admin'
-        //     ]
-        // ]);
-        // $session = new SessionManager(  $driver);
-        // $auth = new Authenticator($session);
+        Mockery::close();
+    }
 
-        $auth = new AuthenticatorStub();
-        $access = new AccessHandler( $auth);
+
+    public function test_grant_access()
+    {   
+
+ 
+        $access = new AccessHandler($this->getAuthMock());
         $this->assertTrue(
             $access->check('admin')
          );
@@ -29,18 +24,28 @@ class AccessHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function test_deny_access()
     {
-        // $driver = new SessionArrayDriver([
-        //     'user_data' => [
-        //         'name' => 'Ivan',
-        //         'role' => 'admin'
-        //     ]
-        // ]);
-        // $session = new SessionManager(  $driver);
-        // $auth = new Authenticator($session);
-        $auth = new AuthenticatorStub();
-        $access = new AccessHandler($auth);
+
+        $access = new AccessHandler($this->getAuthMock());
+        
         $this->assertFalse(
             $access->check('user')
          );
+    }
+
+    public function getAuthMock()
+    {
+        $user = Mockery::mock(User::class);
+        $user->role = 'admin';
+
+        $auth = Mockery::mock(AuthenticatorInterface::class);
+        $auth->shouldReceive('check')
+            ->once()
+            ->andReturn(true);
+
+        $auth->shouldReceive('user')
+            ->once()
+            ->andReturn($user);
+
+        return $auth;
     }
 }
