@@ -58,10 +58,32 @@
 
 
 <div>
- <h4>Comando/atajos </h4>
+ <h4>Comando /atajos / funciones PHP </h4>
     <div>
         <ul>Crear alias para ejecutar tests
             <li>alias test=vendor/bin/phpunit</li>
         </ul>
+    </div>
+    <div>
+        <ul>ob_start()
+            <li>Activa el almacenamiento en búfer de la salida.</li>
+            <p>Mientras dicho almacenamiento esté activo, no se enviará ninguna salida desde el script (aparte de cabeceras); en su lugar la salida se almacenará en un búfer interno.</p>
+        </ul>
+        <ul>ob_get_clean()
+            <li>Obtiene el contenido del búfer actual y elimina el búfer de salida actual.</li>
+            <p>El búfer de salida debe estar iniciado por ob_start() </p>
+            <p>Devuelve el contenido del búfer de salida y finaliza el almacenamiento en el mismo. Si el almacenamiento en el búfer de salida no está activo, entonces devuelve false. </p>
+        </ul>
+        <ul>extract()
+            <li> Importar variables a la tabla de símbolos actual desde un array.</li>
+            <p>Comprueba cada clave para ver si tiene un nombre de variable válido. También comprueba las colisiones con las variables existentes en la tabla de símbolos.</p>
+        </ul>
+    </div>
+</div>
+<div>
+    <h4>Enlaces de interes </h4>
+    <div>
+        <li> <a href="https://www.php.net/manual" target="_blank"></a> Documentación PHP</li>
+        <li><a href="https://notasweb.me" target="_blank"></a> Notas Web</li>
     </div>
 </div>
