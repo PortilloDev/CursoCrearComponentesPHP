@@ -16,7 +16,7 @@
 <div>
     <h3> WIKI del proyecto </h3>
     <div>
-        <h5>Clases o métodos staticos</h5>
+        <h4>Clases o métodos staticos</h4>
         <p>
             Esto se debe a que al crear una propiedad o método de esa manera no se necesita instanciar la clase para poder usarlos.  Es decir, las propiedades y método declarados como «static» están asociados a una clase en lugar de a una instancia de la clase (objeto).
         </p>
@@ -25,7 +25,7 @@
         </p>
     </div>
     <div>
-        <h5>Interfaz</h5>
+        <h4>Interfaz</h4>
         <p>
             Una Interfaz establece qué debe hacer la clase que la implementa
         </p>
@@ -34,7 +34,7 @@
         </p>
     </div>
      <div>
-        <h5>Stub </h5>
+        <h4>Stub </h4>
         <p>
            Stub es un tipo de clases que emula el comportamiento de otra clase que podemos emplear para avanzar en la construcción de nuestro sistema y no tener que esperar que esa clase esté implementada
         </p>
@@ -48,7 +48,7 @@
 
 
 <div>
- <h5>Comando/atajos </h5>
+ <h4>Comando/atajos </h4>
     <div>
         <ul>Crear alias para ejecutar tests
             <li>alias test=vendor/bin/phpunit</li>
