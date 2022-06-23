@@ -83,7 +83,7 @@
 <div>
     <h4>Enlaces de interes </h4>
     <div>
-        <li> <a href="https://www.php.net/manual" target="_blank"></a> Documentación PHP</li>
-        <li><a href="https://notasweb.me" target="_blank"></a> Notas Web</li>
+        <li> <a href="https://www.php.net/manual" target="_blank"></a> Documentación PHP => https://www.php.net/manual</li>
+        <li><a href="https://notasweb.me" target="_blank"></a> Notas Web => https://notasweb.me</li>
     </div>
 </div>
