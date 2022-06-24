@@ -1,6 +1,7 @@
 <?php
 
 use App\Container;
+use App\Exceptions\ContainerException;
 
 class ContainerTest extends \PHPUnit\Framework\TestCase
 {
@@ -30,21 +31,103 @@ class ContainerTest extends \PHPUnit\Framework\TestCase
     {
         $container = new Container();
 
-        $container->bind('key', 'Foo');
+        $container->bind('key', 'StdClass');
 
-        $this->assertInstanceOf('Foo', $container->make('key'));
+        $this->assertInstanceOf('StdClass', $container->make('key'));
     }
 
+    public function test_bind_with_automatic_resolution()
+    {
+        $container = new Container();
+
+        $container->bind('foo', 'Foo');
+
+        $this->assertInstanceOf('Foo', $container->make('foo'));
+    }
+
+    public function test_expected_container_exception_if_dependency_does_not_exist()
+    {
+        $this->expectException(
+            ReflectionException::class,
+            'Unable to build [Qux]: Class Perr does not exist '
+        );
+        $container = new Container();
+
+        $container->bind('qux', 'Qux');
+
+        $container->make('qux');
+    }
+
+    public function test_container_make_with_arguments()
+    {
+       
+        $container = new Container();
+
+        $this->assertInstanceOf(
+            MailDummy::class ,
+            $container->make('MailDummy', [
+                'url' => 'notasweb.me',
+                'key' => 'secret'
+            ]));
+    }
+
+    public function test_container_make_with_default_arguments()
+    {
+       
+        $container = new Container();
+
+        $this->assertInstanceOf(
+            MailDummy::class ,
+            $container->make('MailDummy', [
+                'url' => 'notasweb.me',
+            ]));
+    }
 
 }
 
+class MailDummy 
+{
+    private $url;
+    private $key;
+
+
+    public function __construct($url, $key = 'secret')
+    {
+        $this->url = $url;
+        $this->key = $key;
+    }
+}
 class Foo 
 {
-    public function __construct(Bar $bar)
+    public function __construct(Bar $bar, Baz $baz)
     {
 
     }
 
 }
 
-class Bar {}
+class Bar 
+{
+    public function __construct(FooBar $fooBar)
+    {
+
+    }
+}
+
+class FooBar
+{
+
+}
+
+class Baz
+{
+
+}
+
+class Qux 
+{
+    public function __construct(Perr $perr)
+    {
+
+    }
+}
