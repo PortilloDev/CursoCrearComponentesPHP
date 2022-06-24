@@ -1,5 +1,18 @@
 <?php 
 
+use App\Container;
+
+
 require (__DIR__ . '/../bootstrap/start.php');
 
-view('students', []);
+function StudentsController()
+{
+    $access = Container::getInstance()->access();
+    if ( !$access->check('student')) {
+    
+        abort404();
+    }
+    view('students', compact('access'));
+}
+
+StudentsController();

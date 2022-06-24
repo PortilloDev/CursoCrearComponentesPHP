@@ -15,6 +15,46 @@
 
 <div>
     <h3> WIKI del proyecto </h3>
+     <div>
+        <h4>Contenedor de inyección de dependencias</h4>
+        <p>
+            Para reducir la cantidad de código que necesitamos cuando implementamos el patrón de inyección de dependencias, debemos crear otro objeto llamado contenedor de inyección de dependencias, el cuál será un objeto que conocerá cómo instanciar y «ensamblar» otros objetos.
+        </p>
+        <p>
+           Los contenedores de inyección de dependencias se crean como objetos que conocen cómo instanciar y configurar otros objetos, simplificando y desacoplando el código, ayudando a pasar de estructuras más complejas a un objeto que encapsula cómo funciona los constructores de cada uno de los otros objetos y sus dependencias, permitiendo de esta manera trabajar con ellos sin mayor problema.
+        </p>
+    </div>
+     <div>
+        <h4>Inyección de dependencias</h4>
+        <p>
+           Con el patrón de inyección de dependencias, los objetos, de los cuales una clase depende, son inyectados a través del constructor o de métodos setters.
+           Con este patrón se intenta crear un código más desacoplado y mejor mantenible en el tiempo.
+        </p>
+    </div>
+         <div>
+        <h4>Patrón de diseño Singleton</h4>
+        <p>
+           Los patrones de diseño se utilizan con la finalidad de estandarizar la forma en que desarrollamos el código ofreciendo soluciones reusables. Es importante señalar que el uso e implementación de un patrón de diseño no es obligatorio, pero en algunos casos es recomendado como parte de las buenas prácticas.
+        </p>
+        <p>
+           Singleton, su intención consiste en garantizar que una clase sólo tenga una instancia y proporcionar un punto de acceso global a ella.
+        </p>
+        <p>
+            Al implementar en una clase el patrón Singleton su constructor debe estar privado y acceder a él por medio de un método público.
+        </p>
+    </div>
+    <div>
+        <h4>Reflection</h4>
+        <p>
+            PHP viene con una API de reflexión completa que añade la capacidad para realizar ingeniería inversa de clases, interfaces, funciones, métodos y extensiones. Además, la API de reflexión ofrece varias formas de obtener comentarios de documentación de funciones, clases y métodos.
+        </p>
+    </div>
+     <div>
+        <h4>Ingeniería inversa</h4>
+        <p>
+            La ingeniería inversa o retroingeniería es el proceso llevado a cabo con el objetivo de obtener información o un diseño a partir de un producto, con el fin de determinar cuáles son sus componentes y de qué manera interactúan entre sí y cuál fue el proceso de fabricación.
+        </p>
+    </div>
     <div>
         <h4>Clases o métodos staticos</h4>
         <p>
@@ -41,6 +81,28 @@
         <p>
             Componente de instalacion:
            <code> composer require mockery/mockery --dev  </code>
+        </p>
+    </div>
+    <div>
+        <h4>whoops</h4>
+        <p>
+           whoops es un marco de manejo de errores para PHP
+        </p>
+        <p>
+            <ul dir="auto">
+                <li>Manejo de errores flexible y basado en pilas</li>
+                <li>Biblioteca independiente sin (actualmente) dependencias requeridas</li>
+                <li>API simple para manejar excepciones, marcos de rastreo y sus datos</li>
+                <li>Incluye una página de error bastante radical para sus proyectos de aplicaciones web</li>
+                <li>Incluye la capacidad de abrir archivos referenciados directamente en su editor e IDE</li>
+                <li>Incluye controladores para diferentes formatos de respuesta (JSON, XML, SOAP)</li>
+                <li>Fácil de ampliar e integrar con bibliotecas existentes</li>
+                <li>Base de código limpia, bien estructurada y probada</li>
+            </ul>
+        </p>
+        <p>
+            Componente de instalacion:
+           <code> composer require filp/whoops  </code>
         </p>
     </div>
      <div>

@@ -11,6 +11,7 @@ class SessionArrayDriver implements SessionDriverInterface
     public function __construct(array $data = array())
     {
         $this->data = $data;
+        
     }
 
     public function load()

@@ -19,12 +19,12 @@
   <body>
 		<!-- ========================= header start ========================= -->
     <header class="header">
-      <div class="navbar-area">
+      <div class="navbar-area" style="background-color: #5864ff; color: white !important;">
         <div class="container relative">
           <div class="row items-center">
             <div class="w-full">
               <nav class="flex items-center justify-between py-4 navbar navbar-expand-lg">
-                <a class="navbar-brand mr-5 text-4xl bold text-white" href="index.html">
+                <a class="navbar-brand mr-5 text-4xl bold text-white" href="/index.php">
                  Academía Notas Web
                 </a>
                 <button class="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,18 +36,18 @@
                 <div class="absolute left-0 z-20 hidden w-full px-5 py-3 duration-300 bg-white shadow lg:w-auto collapse navbar-collapse lg:block top-full mt-full lg:static lg:bg-transparent lg:shadow-none" id="navbarOne">
                   <ul id="nav" class="items-center content-start mr-auto lg:justify-end navbar-nav lg:flex">
                     <li class="nav-item ml-5 lg:ml-11">
-                      <a class="page-scroll active" href="#home">Home</a>
+                      <a class="" href="/">Home</a>
                     </li>
-                    <?php //if(Acces::check(['students'])) ?>
+                    <?php if ($access->check(['students'])): ?>
                      <li class="nav-item ml-5 lg:ml-11">
-                      <a class="page-scroll" href="students.php">students</a>
+                      <a class="" href="students.php">students</a>
                     </li>
-                    <? // endif; ?>
-                    <?php //if(Acces::check(['teacher'])) ?>
+                    <?php endif ?>
+                    <?php if ($access->check('teacher')): ?>
                     <li class="nav-item ml-5 lg:ml-11">
-                      <a class="page-scroll" href="teachers.php">Teachers</a>
+                      <a class="" href="teachers.php">Teachers</a>
                     </li>
-                    <? //endif; ?>
+                    <?php endif ?>
                   </ul>
                 </div>
                 <!-- navbar collapse -->
@@ -64,23 +64,12 @@
     <!-- ========================= header end ========================= -->
 
     <!-- ========================= hero-section start ========================= -->
-    <section id="home" class="hero-section relative bg-no-repeat bg-top z-10 pt-200 pb-13 lg:pb-200 2xl:pb-120" style="background-image: url('assets/img/hero/hero-bg.svg')">
+    <section id="home" class="hero-section relative bg-no-repeat bg-blue-300 bg-top z-10 pt-200 pb-13 lg:pb-200 2xl:pb-120 w-full" style="background-image: url('assets/img/hero/header.jpg'); width:100%">>
       <div class="container">
         <div class="row flex items-center relative">
           <div class="w-full lg:w-1/2">
-            <div class="hero-content mb-0 lg:mb-6">
-              <h1 class="text-white mb-9 text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-5xl 2xl:text-6xl">Launch Your SaaS Website in Minutes!</h1>
-              <p class="text-white text-lg mb-10 xl:pr-18 2xl:pr-120">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-              </p>
-							<a href="javascript:void(0)" class="main-btn border-btn btn-hover mb-2">Get Started</a>
-							<a href="#features" class="scroll-bottom"> <i class="lni lni-arrow-down"></i></a>
-            </div>
 					</div>
 					<div class="w-full lg:w-1/2">
-						<div class="hero-img pt-8 lg:pt-0">
-							<img src="assets/img/hero/hero-img.png" alt="" class="w-full lg:w-auto">
-						</div>
 					</div>
         </div>
 			</div>
