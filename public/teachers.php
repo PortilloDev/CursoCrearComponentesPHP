@@ -8,7 +8,7 @@ require (__DIR__ . '/../bootstrap/start.php');
 
 function TeacherController()
 {
-    $access = Container::getInstance()->access();
+    $access = Container::getInstance()->make('access');
 
     if ( !$access->check('teacher')) {
     

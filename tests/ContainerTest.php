@@ -83,6 +83,21 @@ class ContainerTest extends \PHPUnit\Framework\TestCase
             ]));
     }
 
+    public function test_singleton_instance_container()
+    {
+       
+        $container = new Container();
+
+        $container->singleton('foo', 'Foo');
+
+        $this->assertSame(
+            $container->make('foo'),
+            $container->make('foo')
+        );
+
+
+    }
+
 }
 
 class MailDummy 

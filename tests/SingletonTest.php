@@ -21,9 +21,17 @@ class SingletonTest extends \PHPUnit\Framework\TestCase
 
     public function test_welcome_know_users()
     {
-        $greeter = GreeterDummy::getInstance('Ivan');
+        $greeter = new GreeterDummy('Ivan');
         $this->assertSame(
             'Bienvenido Ivan' ,
+            $greeter->welcome() );
+    }
+
+    public function test_welcome_guest_users()
+    {
+        $greeter = new GreeterDummy();
+        $this->assertSame(
+            'Bienvenido Invitado' ,
             $greeter->welcome() );
     }
 
@@ -31,20 +39,23 @@ class SingletonTest extends \PHPUnit\Framework\TestCase
 
 class GreeterDummy 
 {
+
     protected $name = 'Invitado';
+    
     private static  $instance = NULL;
-    private function __construct($name = null)
+
+    public function __construct($name = null)
     {
         if ( $name != null ) {
             $this->name = $name;
         }
     }
 
-    public static function getInstance($name)
+    public static function getInstance()
     {
         if ( static::$instance == null) {
         
-            static::$instance = new GreeterDummy($name);
+            static::$instance = new GreeterDummy();
         
         }
 
