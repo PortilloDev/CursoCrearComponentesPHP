@@ -9,7 +9,7 @@ use App\SessionArrayDriver;
 require __DIR__ . '/../vendor/autoload.php';
 
 
-class_alias('App\AccessHandler', 'Access');
+class_alias('App\Facades\Access', 'Access');
 
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
@@ -17,6 +17,8 @@ $whoops->register();
 
 
 $container = \App\Container::getInstance();
+
+\App\Facades\Access::setContainer($container);
 
 $container->singleton('session', function() {
 

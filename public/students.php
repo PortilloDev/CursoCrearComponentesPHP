@@ -1,18 +1,18 @@
 <?php 
 
-use App\Container;
-
+//No se importa la clase Access, porque se crea como alias en el fichero
+//start.php
 
 require (__DIR__ . '/../bootstrap/start.php');
 
 function StudentsController()
 {
-    $access = Container::getInstance()->make('access');
-    if ( !$access->check('student')) {
+ 
+    if ( !Access::check('student')) {
     
         abort404();
     }
-    view('students', compact('access'));
+    view('students');
 }
 
 StudentsController();

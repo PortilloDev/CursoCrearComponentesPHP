@@ -38,12 +38,12 @@
                     <li class="nav-item ml-5 lg:ml-11">
                       <a class="" href="/">Home</a>
                     </li>
-                    <?php if ($access->check(['students'])): ?>
+                    <?php if (Access::check(['students'])): ?>
                      <li class="nav-item ml-5 lg:ml-11">
                       <a class="" href="students.php">students</a>
                     </li>
                     <?php endif ?>
-                    <?php if ($access->check('teacher')): ?>
+                    <?php if (Access::check('teacher')): ?>
                     <li class="nav-item ml-5 lg:ml-11">
                       <a class="" href="teachers.php">Teachers</a>
                     </li>

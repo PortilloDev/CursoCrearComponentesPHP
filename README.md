@@ -73,6 +73,55 @@
            En la programación orientada a objetos las interfaces nos permiten crear objetos aún más flexibles, dado que si un controlador necesita un repositorio, podemos solicitar una interface en vez de una implementación en concreta
         </p>
     </div>
+      <div>
+        <h4>Facade </h4>
+        <p>
+           En términos generales una facade es una forma fácil de usar algo que por dentro es más complicado, como una fachada
+        </p>
+        <p>
+          Esto de alguna manera permite encapsular código , haciendo que sea más sencillo pero manteniéndolo reusable y desacoplado. Entonces un Facade es una clase que contiene métodos estáticos, los cuales se encargarán de realizar los llamados a métodos y/o las acciones relacionadas con una clase que se está implementando (por ejemplo, la creación de la instancia del contenedor de inyección de dependencias), permitiendo así presentar una interfaz sencilla para el uso de la clase, y de esta forma tener una arquitectura de código robusta pero fácil de usar.
+        </p>
+        <p>
+          Tambien es un tipo de patrón de diseño estructural. Viene motivado por la necesidad de estructurar un entorno de programación y reducir su complejidad con la división en subsistemas, minimizando las comunicaciones y dependencias entre estos.
+        </p>
+        <h4>Consideraciones para su aplicación </h4>
+        <p>
+        Cuando se necesite proporcionar una interfaz simple para un subsistema complejo, o cuando se quiera estructurar varios subsistemas en capas, ya que las fachadas serían el punto de entrada a cada nivel. Otro escenario proclive para su aplicación surge de la necesidad de desacoplar un sistema de sus clientes y de otros subsistemas, haciéndolo más independiente, portable y reutilizable (esto es, reduciendo dependencias entre los subsistemas y los clientes).
+        </p>
+    </div>
+      <div>
+        <h4>class_alias </h4>
+        <p>
+          Crear alias para una clase
+        </p>
+        <p>
+          Crea un alias dado por alias basado en la clase original definida por el usuario. La clase apodada es exactamente la misma que la clase original.
+        </p>
+        <p>
+          Con la función class_alias podemos simplificar aún más las interfaces de nuestro código,  pues de esta manera no se necesitaría importar la clase Facade en cada momento que se requiera usar, sino que definiendo un alias en bootstrap/start.php ya tendríamos dicho Facade disponible en toda la aplicación, puesto que al no importar la clase, PHP automáticamente busca un alias de la clase, el cual hemos definido en el archivo.
+        </p>
+    </div>
+    <div>
+        <h4>__callStatic  </h4>
+        <p>
+           Es un método mágico de PHP que se llama automáticamente cada vez que se intenta llamar a un método estático que no exista dentro la clase; el cual recibe como parámetros el nombre del método que se está llamando y un array con los argumentos que se están pasando a través del método
+        </p>
+    </div>
+      <div>
+        <h4>call_user_func_array  </h4>
+        <p>
+           Es en realidad para llamar a un método de un objeto, entonces el primer argumento es un array con dos elementos: el objeto y el método del objeto que se está llamando y como segundo argumento un array con los parámetros de dicho método
+        </p>
+        <p>
+          Llamar a una llamada de retorno con un array de parámetros
+        </p>
+        <p>
+          Retorna el valor devuelto por la llamada de retorno, o false en caso de error.
+        </p>
+    </div>
+    <hr>
+    <h4>Componentes Externos </h4>
+    <hr>
     <div>
         <h4>Mockery</h4>
         <p>
